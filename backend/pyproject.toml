@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "coletivo-piaya-cayana-backend"
+version = "0.1.0"
+description = "Backend Django do Coletivo Piaya Cayana"
+authors = ["Coletivo Piaya Cayana <contato@piaya.local>"]
+readme = "README.md"
+packages = [{ include = "config" }, { include = "apps" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Django = "^5.0"
+djangorestframework = "^3.15"
+drf-spectacular = "^0.27"
+django-cors-headers = "^4.4"
+python-dotenv = "^1.0"
+psycopg = {extras = ["binary"], version = "^3.2"}
+boto3 = "^1.35"
+django-storages = "^1.14"
+markdown = "^3.7"
+bleach = "^6.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3"
+pytest-django = "^4.9"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.dev"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
