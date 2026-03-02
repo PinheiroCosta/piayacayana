@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: coletivo-piaya-cayana-backend
+    env: docker
+    rootDir: backend
